@@ -10,7 +10,7 @@ RUN		apt-get update
 
 # Installing the php-fpm, WordPress and php-redis (for bonus) versions available
 # in Debian at the time the project was created ('apt policy' command)
-RUN apt-get install -y php-fpm=2:7.3+69 wordpress=5.0.12+dfsg1-0+deb10u1
+RUN apt-get install -y php-fpm=2:7.3+69 wordpress=5.0.12+dfsg1-0+deb10u1 unzip
 
 #For Redis (bonus)
 RUN	apt-get install -y php-redis=4.2.0-1
@@ -42,17 +42,18 @@ RUN sed -i "s/MYSQL_DATABASE/$mysql_database/" /usr/share/wordpress/wp-config.ph
 RUN	sed -i "s/DOMAIN_NAME/$domain_name/" /usr/share/wordpress/wp-config.php
 
 # Preinstallation content
-# COPY ./conf/wp-content /usr/share/wordpress/wp-content
+COPY ./conf/wp-content.zip /
+RUN unzip -q wp-content.zip -d /usr/share/wordpress && rm -f wp-content.zip
 
 # Copy the Redis-Object-Cache script (bonus)
 # for the operation of the Redis (bonus) with Wordpress
-COPY ./conf/object-cache.php /usr/share/wordpress/wp-content/object-cache.php
+# !!!It is already present in Preinstallation content
+# COPY ./conf/object-cache.php /usr/share/wordpress/wp-content/object-cache.php
+RUN chown -R www-data:www-data /usr/share/wordpress
 
 # Configuring PHP for session caching using Redis (bonus)
 RUN sed -i "s/session.save_handler = files/session.save_handler = redis/g" /etc/php/7.3/fpm/php.ini && \
 		sed -i "s/;session.save_path = \"\/var\/lib\/php\/sessions\"/\session.save_path = \"tcp\:\/\/redis\:6379\"/" /etc/php/7.3/fpm/php.ini
-
-RUN chown -R www-data:www-data /usr/share/wordpress
 
 # Instructions for Docker that the container is listening on port 9000
 # (by default TCP protocol)
