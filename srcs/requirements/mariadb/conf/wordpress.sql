@@ -412,7 +412,6 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13,	1,	'wp_user_level',	'10'),
 (14,	1,	'dismissed_wp_pointers',	'wp496_privacy'),
 (15,	1,	'show_welcome_panel',	'1'),
-(16,	1,	'session_tokens',	'a:1:{s:64:\"9b1f16109ab25e14cf0cee2659ae1c3f1dd871ce79fb6d1fb5e79a83f57014e4\";a:4:{s:10:\"expiration\";i:1627666018;s:2:\"ip\";s:13:\"85.249.45.157\";s:2:\"ua\";s:119:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15\";s:5:\"login\";i:1627493218;}}'),
 (17,	1,	'wp_dashboard_quick_press_last_post_id',	'4'),
 (18,	1,	'community-events-location',	'a:1:{s:2:\"ip\";s:11:\"85.249.45.0\";}'),
 (19,	2,	'nickname',	'author0'),
@@ -454,4 +453,4 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 (2,	'author0',	'$P$BYs0NeOmhj/DEgQSH0INLIRe0vJ8HB/',	'author0',	'mu@me.com',	'',	'2021-07-28 17:52:24',	'1627494744:$P$BkKZYtiJvC/.OMkF3fk1fYh.zSzbnP1',	0,	'Антоша Чехонте')
 ON DUPLICATE KEY UPDATE `ID` = VALUES(`ID`), `user_login` = VALUES(`user_login`), `user_pass` = VALUES(`user_pass`), `user_nicename` = VALUES(`user_nicename`), `user_email` = VALUES(`user_email`), `user_url` = VALUES(`user_url`), `user_registered` = VALUES(`user_registered`), `user_activation_key` = VALUES(`user_activation_key`), `user_status` = VALUES(`user_status`), `display_name` = VALUES(`display_name`);
 
--- 2021-07-28 17:55:24
+-- 2021-07-28 18:43:14

@@ -28,7 +28,7 @@
 		66A74E0026B14A780037B898 /* named.conf.default-zones */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "named.conf.default-zones"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74E0126B14A780037B898 /* db.mclam.42.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.mclam.42.fr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74E0226B1D6990037B898 /* wp-content.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "wp-content.zip"; sourceTree = "<group>"; };
-		66A74E0326B1D8B80037B898 /* wordpress.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordpress.sql; sourceTree = "<group>"; };
+		66A74E0426B1DD9A0037B898 /* wordpress.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordpress.sql; sourceTree = "<group>"; };
 		66DF66C82678A938008AE2BC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
 		66DF66CA2678A9A4008AE2BC /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66D22678AAA9008AE2BC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
@@ -200,7 +200,7 @@
 		66DF66D52678ACC1008AE2BC /* conf */ = {
 			isa = PBXGroup;
 			children = (
-				66A74E0326B1D8B80037B898 /* wordpress.sql */,
+				66A74E0426B1DD9A0037B898 /* wordpress.sql */,
 			);
 			path = conf;
 			sourceTree = "<group>";
