@@ -20,6 +20,7 @@ mkdir:
 	mkdir -p ~/data/html
 	mkdir -p ~/data/rd
 	mkdir -p ~/data/ftp
+	mkdir -p ~/data/dns
 
 up:
 	@echo "======================================"

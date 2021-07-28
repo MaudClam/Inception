@@ -42,6 +42,12 @@ volumes:
       type: none
       o: bind
       device: ~/data/ftp
+  dns:
+    name: dns
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/dns
 
 services:
 
@@ -153,3 +159,17 @@ services:
     network_mode: "bridge"
     restart: always
     container_name: ftp
+
+  dns:
+    build:
+      context: ./requirements/bonus/dns
+    image: dns:mclam
+    env_file: .env
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - dns:/etc/bind
+    network_mode: "bridge"
+    restart: always
+    container_name: dns
