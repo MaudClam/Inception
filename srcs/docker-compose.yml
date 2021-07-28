@@ -168,9 +168,9 @@ services:
     ports:
       - "0.0.0.0:53:53/udp"
       - "0.0.0.0:53:53/tcp"
-#    dns:
-#      - 188.93.16.13
-#      - 188.93.17.19
+    dns:
+      - 188.93.16.13
+      - 188.93.17.19
     volumes:
       - dns:/etc/bind
     network_mode: "bridge"
