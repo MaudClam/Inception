@@ -26,6 +26,10 @@
 		66A74E0126B14A780037B898 /* db.mclam.42.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.mclam.42.fr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74E0226B1D6990037B898 /* wp-content.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "wp-content.zip"; sourceTree = "<group>"; };
 		66A74E0426B1DD9A0037B898 /* wordpress.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordpress.sql; sourceTree = "<group>"; };
+		66A74E1226B213460037B898 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		66A74E1326B21A550037B898 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		66A74E1426B21B270037B898 /* checklist.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = checklist.pdf; sourceTree = "<group>"; };
+		66A74E1526B21B270037B898 /* en.subject.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = en.subject.pdf; sourceTree = "<group>"; };
 		66DF66C82678A938008AE2BC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
 		66DF66CA2678A9A4008AE2BC /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66D22678AAA9008AE2BC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
@@ -218,6 +222,10 @@
 		66DF66D92678AD60008AE2BC /* conf */ = {
 			isa = PBXGroup;
 			children = (
+				66A74E1426B21B270037B898 /* checklist.pdf */,
+				66A74E1526B21B270037B898 /* en.subject.pdf */,
+				66A74E1326B21A550037B898 /* image.png */,
+				66A74E1226B213460037B898 /* index.html */,
 				661A137A26B103B100632478 /* default */,
 				664DC7DD26A725BA001D9899 /* mclam.42.fr.crt */,
 				664DC7DC26A725B9001D9899 /* mclam.42.fr.key */,
