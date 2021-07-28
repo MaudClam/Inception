@@ -23,7 +23,7 @@ ARG mysql_password
 ARG mysql_database
 
 # Copying the database dump, with two WordPress users and initial settings
-COPY ./conf/wordpress.sql /
+#COPY ./conf/wordpress.sql /
 
 # Force MySQL to do the following using arguments:
 # -assign root password for MySQL,

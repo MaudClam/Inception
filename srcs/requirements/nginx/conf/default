@@ -4,12 +4,11 @@ server
     listen [::]:443 ssl;
     
     server_name DOMAIN_NAME;
-    ssl_certificate /etc/nginx/ssl/DOMAIN_NAME.crt;
-    ssl_certificate_key /etc/nginx/ssl/DOMAIN_NAME.key;
-
-    #WordPress
 		root /usr/share/wordpress;
-    index index.php;
+		index index.php index.html index.htm;
+		ssl_certificate /etc/nginx/ssl/DOMAIN_NAME.crt;
+    ssl_certificate_key /etc/nginx/ssl/DOMAIN_NAME.key;
+		autoindex on;
 		location ~ \.php$
 		{
 				try_files $uri =404;
@@ -17,6 +16,14 @@ server
 				fastcgi_index index.php;
 				fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 				include       fastcgi_params;
+		}
+
+    #Static Website
+    location /html/
+    {
+				root /var/www;
+				autoindex on;
+				index index.html index.htm index.nginx-debian.html;
 		}
 
     #Adminer
@@ -32,14 +39,7 @@ server
             include       fastcgi_params;
         }
     }
-    #Static Website
-    location /html/
-    {
-				root /var/www;
-				autoindex on;
-				index index.html index.htm index.nginx-debian.html;
-		}
-
+    
     location ~ /\.ht
     {
       deny all;
