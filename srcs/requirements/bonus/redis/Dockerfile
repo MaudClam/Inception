@@ -5,7 +5,7 @@ FROM  debian:buster
 RUN   apt-get update
 
 # Installing debugging tools
-RUN  apt-get install -y procps nano mc nmap
+# RUN  apt-get install -y procps nano mc nmap
 
 # Installing the Redis versions available in Debian
 # at the time the project was created ('apt policy' command)

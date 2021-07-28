@@ -37,9 +37,6 @@ RUN	service mysql start && mysqladmin -u root password ${mysql_root_password} &&
     echo "GRANT ALL PRIVILEGES ON ${mysql_database}.* TO '${mysql_user}' IDENTIFIED BY '${mysql_password}';" | mysql -u root -p${mysql_root_password} && \
     echo "FLUSH PRIVILEGES;" | mysql -u root -p${mysql_root_password}
 
-
-
-
 # Instructions for Docker that the container is listening on port 3306
 # (by default TCP protocol)
 EXPOSE 3306
