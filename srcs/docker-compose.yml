@@ -150,7 +150,7 @@ services:
     volumes:
       - wp:/home/${FTP_USER}
       - ftp:/var/log
-    networks:
-      - inception
+#    networks:
+#      - inception
     restart: always
     container_name: ftp
