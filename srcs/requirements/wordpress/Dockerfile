@@ -48,7 +48,7 @@ COPY ./conf/wp-content /usr/share/wordpress/wp-content
 # for the operation of the Redis (bonus) with Wordpress
 COPY ./conf/object-cache.php /usr/share/wordpress/wp-content/object-cache.php
 
-# Configuring PHP for session caching using Redis
+# Configuring PHP for session caching using Redis (bonus)
 RUN sed -i "s/session.save_handler = files/session.save_handler = redis/g" /etc/php/7.3/fpm/php.ini && \
 		sed -i "s/;session.save_path = \"\/var\/lib\/php\/sessions\"/\session.save_path = \"tcp\:\/\/redis\:6379\"/" /etc/php/7.3/fpm/php.ini
 

@@ -20,3 +20,8 @@ EXPOSE 6379
 
 # Launching Redis in the foreground
 ENTRYPOINT ["redis-server", "/var/lib/redis/redis.conf"]
+
+#Для проверки работоспособности, из контейнера редиса:
+#1.redis-cli monitor
+#2.redis-cli
+#keys *

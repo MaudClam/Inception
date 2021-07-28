@@ -7,23 +7,17 @@ server
     ssl_certificate /etc/nginx/ssl/DOMAIN_NAME.crt;
     ssl_certificate_key /etc/nginx/ssl/DOMAIN_NAME.key;
 
-    root /var/www/html;
-    autoindex on;
-    index index.html index.htm index.nginx-debian.html index.php;
-    
     #WordPress
-    location /wordpress/
-    {
-        root /usr/share;
-        location ~ \.php$
-        {
-            try_files $uri =404;
-            fastcgi_pass  wordpress:9000;
-            fastcgi_index index.php;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            include       fastcgi_params;
-        }
-    }
+		root /usr/share/wordpress;
+    index index.php;
+		location ~ \.php$
+		{
+				try_files $uri =404;
+				fastcgi_pass  wordpress:9000;
+				fastcgi_index index.php;
+				fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+				include       fastcgi_params;
+		}
 
     #Adminer
     location /adminer/
@@ -38,6 +32,13 @@ server
             include       fastcgi_params;
         }
     }
+    #Static Website
+    location /html/
+    {
+				root /var/www;
+				autuindex on;
+				index index.html index.htm index.nginx-debian.html;
+		}
 
     location ~ /\.ht
     {
