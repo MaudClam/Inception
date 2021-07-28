@@ -143,19 +143,16 @@ services:
   ftp:
     build:
       context: ./requirements/bonus/ftp
-      args:
-        - ftp_user=${FTP_USER}
-        - ftp_password=${FTP_PASSWORD}
     depends_on:
       - nginx
     image: ftp:mclam
     env_file: .env
     ports:
+      - "20:20"
       - "21:21"
-      - "31000:31009"
+      - "47400-47470:47400-47470"
     volumes:
-      - wp:/home/${FTP_USER}
-      - ftp:/var/log
+      - wp:/home/vsftpd
     network_mode: "bridge"
     restart: always
     container_name: ftp
