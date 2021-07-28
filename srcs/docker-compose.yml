@@ -154,7 +154,8 @@ services:
     volumes:
       - wp:/home/vsftpd
       - ftp:/var/log/vsftpd
-    network_mode: "bridge"
+    networks:
+      - inception
     restart: always
     container_name: ftp
 

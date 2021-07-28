@@ -10,9 +10,6 @@
 		6601A5662667F6C5002F2A7E /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		661A136526ACB1B600632478 /* Dockerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		661A136726ACB1D200632478 /* .dockerignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dockerignore; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
-		661A136926ACD4F500632478 /* vsftpd_orig.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vsftpd_orig.conf; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
-		661A137826AF8DD300632478 /* vsftpd.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vsftpd.conf; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
-		661A137926B0705C00632478 /* ftp.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ftp.sh; sourceTree = "<group>"; };
 		661A137A26B103B100632478 /* default */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = default; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		664DC7D926A5C91C001D9899 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		664DC7DA26A6F7C1001D9899 /* info.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = info.php; sourceTree = "<group>"; };
@@ -89,9 +86,6 @@
 		661A136426ACB1B600632478 /* conf */ = {
 			isa = PBXGroup;
 			children = (
-				661A137826AF8DD300632478 /* vsftpd.conf */,
-				661A136926ACD4F500632478 /* vsftpd_orig.conf */,
-				661A137926B0705C00632478 /* ftp.sh */,
 			);
 			path = conf;
 			sourceTree = "<group>";
