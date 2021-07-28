@@ -146,7 +146,7 @@ services:
     env_file: .env
     ports:
       - "21:21"
-      - "2100:2100"
+      - "21000:21000"
     volumes:
       - wp:/home/${FTP_USER}
       - ftp:/var/log
