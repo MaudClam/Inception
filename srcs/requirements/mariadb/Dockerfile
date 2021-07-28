@@ -32,11 +32,14 @@ COPY ./conf/wordpress.sql /
 # -creating a WordPress database admin (whose name is not *admin* :).
 RUN	service mysql start && mysqladmin -u root password ${mysql_root_password} && \
     echo "CREATE DATABASE IF NOT EXISTS ${mysql_database}" | mysql -u root -p${mysql_root_password} && \
-    mysql -u root -p${mysql_root_password} ${mysql_database} < wordpress.sql && \
     echo "CREATE USER IF NOT EXISTS '${mysql_user}' IDENTIFIED BY '${mysql_password}';" | mysql -u root -p${mysql_root_password} && \
     echo "GRANT ALL PRIVILEGES ON ${mysql_database}.* TO '${mysql_user}' IDENTIFIED BY '${mysql_password}';" | mysql -u root -p${mysql_root_password} && \
     echo "FLUSH PRIVILEGES;" | mysql -u root -p${mysql_root_password}
-    
+
+
+#    mysql -u root -p${mysql_root_password} ${mysql_database} < wordpress.sql && \
+
+
 # Instructions for Docker that the container is listening on port 3306
 # (by default TCP protocol)
 EXPOSE 3306

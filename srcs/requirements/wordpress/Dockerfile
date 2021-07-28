@@ -42,7 +42,7 @@ RUN sed -i "s/MYSQL_DATABASE/$mysql_database/" /usr/share/wordpress/wp-config.ph
 RUN	sed -i "s/DOMAIN_NAME/$domain_name/" /usr/share/wordpress/wp-config.php
 
 # Preinstallation content
-COPY ./conf/wp-content /usr/share/wordpress/wp-content
+# COPY ./conf/wp-content /usr/share/wordpress/wp-content
 
 # Copy the Redis-Object-Cache script (bonus)
 # for the operation of the Redis (bonus) with Wordpress
