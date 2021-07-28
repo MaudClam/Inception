@@ -1,5 +1,4 @@
 NET =	inception
-NET1 = bridge
 
 all: mkdir up
 
@@ -71,14 +70,10 @@ netshoot:
 	@echo "=Netshoot by Nicolaka================="
 	docker run --rm -it --network $(NET) nicolaka/netshoot
 	
-netshoot1:
-	@echo "=Netshoot by Nicolaka================="
-	docker run --rm -it --network $(NET1) nicolaka/netshoot
-
 clean: rm net vol rst psls
 
 fclean: clean rmi vold psls
 
-.PHONY: all psls up stop rm rmi net vol rst logs netshoot clean fclean mkdir
+.PHONY: all psls up stop rm rmi net vol rst logs clean fclean mkdir
 
 
