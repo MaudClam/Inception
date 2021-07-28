@@ -152,7 +152,7 @@ services:
       - "21:21"
       - "47400-47470:47400-47470"
     volumes:
-      - wp:/home/vsftpd
+      - html:/home/vsftpd
       - ftp:/var/log/vsftpd
     networks:
       - inception
