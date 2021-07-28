@@ -1,4 +1,4 @@
-#	BIND0 container's Dockerfile
+#	BIND9 container's Dockerfile
 
 # Installing Debian Buster OS using Docker image 'debian:buster'
 FROM  debian:buster

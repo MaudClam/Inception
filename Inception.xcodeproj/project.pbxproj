@@ -23,11 +23,11 @@
 		664DC7E426A76E09001D9899 /* nginx.conf_orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nginx.conf_orig; sourceTree = "<group>"; };
 		664DC7E526A78E22001D9899 /* www.conf_orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = www.conf_orig; sourceTree = "<group>"; };
 		664DC80626A9FD1D001D9899 /* info.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = info.php; sourceTree = "<group>"; };
-		66BF3B0E26B136AD00395CF9 /* Dockerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
-		66BF3B0F26B136AD00395CF9 /* .dockerignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dockerignore; sourceTree = "<group>"; };
-		66BF3B1726B137F500395CF9 /* named.conf.options */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = named.conf.options; sourceTree = "<group>"; };
-		66BF3B1826B137F500395CF9 /* db.mclam.42.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.mclam.42.fr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
-		66BF3B1926B137F500395CF9 /* named.conf.default-zones */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "named.conf.default-zones"; sourceTree = "<group>"; };
+		66A74DFC26B14A780037B898 /* Dockerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
+		66A74DFD26B14A780037B898 /* .dockerignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dockerignore; sourceTree = "<group>"; };
+		66A74DFF26B14A780037B898 /* named.conf.options */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = named.conf.options; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
+		66A74E0026B14A780037B898 /* named.conf.default-zones */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "named.conf.default-zones"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
+		66A74E0126B14A780037B898 /* db.mclam.42.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.mclam.42.fr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66C82678A938008AE2BC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
 		66DF66CA2678A9A4008AE2BC /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66D22678AAA9008AE2BC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
@@ -987,12 +987,40 @@
 			path = adminer;
 			sourceTree = "<group>";
 		};
+		66A74DFA26B14A780037B898 /* dns */ = {
+			isa = PBXGroup;
+			children = (
+				66A74DFD26B14A780037B898 /* .dockerignore */,
+				66A74DFE26B14A780037B898 /* conf */,
+				66A74DFC26B14A780037B898 /* Dockerfile */,
+				66A74DFB26B14A780037B898 /* tools */,
+			);
+			name = dns;
+			path = srcs/requirements/bonus/dns;
+			sourceTree = SOURCE_ROOT;
+		};
+		66A74DFB26B14A780037B898 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		66A74DFE26B14A780037B898 /* conf */ = {
+			isa = PBXGroup;
+			children = (
+				66A74DFF26B14A780037B898 /* named.conf.options */,
+				66A74E0026B14A780037B898 /* named.conf.default-zones */,
+				66A74E0126B14A780037B898 /* db.mclam.42.fr */,
+			);
+			path = conf;
+			sourceTree = "<group>";
+		};
 		66BF3B0C26B136AD00395CF9 /* dns */ = {
 			isa = PBXGroup;
 			children = (
-				66BF3B0F26B136AD00395CF9 /* .dockerignore */,
+				66A74DFA26B14A780037B898 /* dns */,
 				66BF3B1026B136AD00395CF9 /* conf */,
-				66BF3B0E26B136AD00395CF9 /* Dockerfile */,
 				66BF3B0D26B136AD00395CF9 /* tools */,
 			);
 			name = dns;
@@ -1009,9 +1037,6 @@
 		66BF3B1026B136AD00395CF9 /* conf */ = {
 			isa = PBXGroup;
 			children = (
-				66BF3B1826B137F500395CF9 /* db.mclam.42.fr */,
-				66BF3B1926B137F500395CF9 /* named.conf.default-zones */,
-				66BF3B1726B137F500395CF9 /* named.conf.options */,
 			);
 			path = conf;
 			sourceTree = "<group>";
