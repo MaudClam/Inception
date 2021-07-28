@@ -17,11 +17,13 @@ ARG mysql_user
 ARG mysql_password
 ARG mysql_database
 
+
 COPY ./conf/wordpress.sql /
 
 # Force MySQL to do the following using arguments:
 # -assign root password for MySQL,
 # -create a WordPress database,
+# -loading a database dump, with two WordPress users and initial settings,
 # -create a WordPress database admin.
 RUN	service mysql start && mysqladmin -u root password ${mysql_root_password} && \
     echo "CREATE DATABASE IF NOT EXISTS ${mysql_database}" | mysql -u root -p${mysql_root_password} && \
