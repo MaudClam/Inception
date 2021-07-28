@@ -5,7 +5,7 @@ FROM  debian:buster
 RUN   apt-get update
 
 # Installing debugging tools
-RUN  apt-get install -y procps nano mc nmap
+RUN  apt-get install -y procps nano mc nmap host
 
 RUN apt-get install -y bind9=1:9.11.5.P4+dfsg-5.1+deb10u5 bind9utils=1:9.11.5.P4+dfsg-5.1+deb10u5
 

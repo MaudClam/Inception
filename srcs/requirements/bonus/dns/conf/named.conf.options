@@ -24,7 +24,7 @@ options {
 	//========================================================================
 //	dnssec-validation auto;
 
-//		allow-recursion { any; };
+		allow-recursion { any; }; view recusion yes;
 		
 //	listen-on-v6 { any; };
 };
