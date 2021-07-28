@@ -43,7 +43,7 @@ RUN	sed -i "s/DOMAIN_NAME/$domain_name/" /usr/share/wordpress/wp-config.php
 
 # Preinstallation content
 COPY ./conf/wp-content.zip /
-RUN unzip -q wp-content.zip -d /usr/share/wordpress && rm -f wp-content.zip
+RUN rm -fr /usr/share/wordpress/wp-content && unzip -q wp-content.zip -d /usr/share/wordpress && rm -f wp-content.zip
 
 # Copy the Redis-Object-Cache script (bonus)
 # for the operation of the Redis (bonus) with Wordpress
