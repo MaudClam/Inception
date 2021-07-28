@@ -1,0 +1,156 @@
+version: "3.9"
+
+networks:
+  inception:
+    driver: bridge
+    name: inception
+
+volumes:
+  db:
+    name: db
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/db
+  wp:
+    name: wp
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/wp
+  ad:
+    name: ad
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/ad
+  html:
+    name: html
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/html
+  rd:
+    name: rd
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/rd
+  ftp:
+    name: ftp
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/ftp
+
+services:
+
+  mysql:
+    build:
+      context: ./requirements/mariadb
+      args:
+        - mysql_root_password=${MYSQL_ROOT_PASSWORD}
+        - mysql_user=${MYSQL_USER}
+        - mysql_password=${MYSQL_PASSWORD}
+        - mysql_database=${MYSQL_DATABASE}
+    image: mysql:mclam
+    env_file: .env
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - inception
+    restart: always
+    container_name: mysql
+
+  wordpress:
+    build:
+      context: ./requirements/wordpress
+      args:
+        - mysql_database=${MYSQL_DATABASE}
+        - mysql_user=${MYSQL_USER}
+        - mysql_password=${MYSQL_PASSWORD}
+        - wordpress_database_host=${WORDPRESS_DATABASE_HOST}
+        - wordpress_table_prefix=${WORDPRESS_TABLE_PREFIX}
+        - wordpress_debug=${WORDPRESS_DEBUG}
+        - domain_name=${DOMAIN_NAME}
+    depends_on:
+      - mysql
+    image: wordpress:mclam
+    env_file: .env
+    volumes:
+      - wp:/usr/share/wordpress
+    networks:
+      - inception
+    restart: always
+    container_name: wordpress
+
+  nginx:
+    build:
+      context: ./requirements/nginx
+      args:
+        - certs_=${CERTS_}
+        - domain_name=${DOMAIN_NAME}
+    depends_on:
+      - wordpress
+      - adminer
+    image: nginx:mclam
+    env_file: .env
+    ports:
+      - "443:443"
+    volumes:
+      - wp:/usr/share/wordpress
+      - ad:/usr/share/adminer
+      - html:/var/www/html
+    networks:
+      - inception
+    restart: always
+    container_name: nginx
+
+  adminer:
+    build:
+      context: ./requirements/bonus/adminer
+    depends_on:
+      - wordpress
+    image: adminer:mclam
+    env_file: .env
+    volumes:
+      - ad:/usr/share/adminer
+    networks:
+      - inception
+    restart: always
+    container_name: adminer
+
+  redis:
+    build:
+      context: ./requirements/bonus/redis
+    depends_on:
+      - adminer
+    image: redis:mclam
+    env_file: .env
+    volumes:
+      - rd:/var/lib/redis
+    networks:
+      - inception
+    restart: always
+    container_name: redis
+
+  ftp:
+    build:
+      context: ./requirements/bonus/ftp
+      args:
+        - ftp_user=${FTP_USER}
+        - ftp_password=${FTP_PASSWORD}
+    depends_on:
+      - nginx
+    image: ftp:mclam
+    env_file: .env
+    ports:
+      - "21:21"
+      - "2100:2100"
+    volumes:
+      - wp:/home/${FTP_USER}
+      - ftp:/var/log
+    networks:
+      - inception
+    restart: always
+    container_name: ftp
