@@ -25,7 +25,6 @@
 		664DC80626A9FD1D001D9899 /* info.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = info.php; sourceTree = "<group>"; };
 		66A74DFC26B14A780037B898 /* Dockerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74DFD26B14A780037B898 /* .dockerignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dockerignore; sourceTree = "<group>"; };
-		66A74DFF26B14A780037B898 /* named.conf.options */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = named.conf.options; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74E0026B14A780037B898 /* named.conf.default-zones */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "named.conf.default-zones"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66A74E0126B14A780037B898 /* db.mclam.42.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.mclam.42.fr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66C82678A938008AE2BC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
@@ -1009,34 +1008,8 @@
 		66A74DFE26B14A780037B898 /* conf */ = {
 			isa = PBXGroup;
 			children = (
-				66A74DFF26B14A780037B898 /* named.conf.options */,
 				66A74E0026B14A780037B898 /* named.conf.default-zones */,
 				66A74E0126B14A780037B898 /* db.mclam.42.fr */,
-			);
-			path = conf;
-			sourceTree = "<group>";
-		};
-		66BF3B0C26B136AD00395CF9 /* dns */ = {
-			isa = PBXGroup;
-			children = (
-				66A74DFA26B14A780037B898 /* dns */,
-				66BF3B1026B136AD00395CF9 /* conf */,
-				66BF3B0D26B136AD00395CF9 /* tools */,
-			);
-			name = dns;
-			path = srcs/requirements/dns;
-			sourceTree = SOURCE_ROOT;
-		};
-		66BF3B0D26B136AD00395CF9 /* tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = tools;
-			sourceTree = "<group>";
-		};
-		66BF3B1026B136AD00395CF9 /* conf */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = conf;
 			sourceTree = "<group>";
@@ -1089,7 +1062,7 @@
 			isa = PBXGroup;
 			children = (
 				664DC80526A9F7C5001D9899 /* adminer */,
-				66BF3B0C26B136AD00395CF9 /* dns */,
+				66A74DFA26B14A780037B898 /* dns */,
 				661A136126ACB0EF00632478 /* ftp */,
 				66E590FB26AB2EA90080E05E /* redis */,
 			);
