@@ -52,6 +52,8 @@ COPY ./conf/object-cache.php /usr/share/wordpress/wp-content/object-cache.php
 RUN sed -i "s/session.save_handler = files/session.save_handler = redis/g" /etc/php/7.3/fpm/php.ini && \
 		sed -i "s/;session.save_path = \"\/var\/lib\/php\/sessions\"/\session.save_path = \"tcp\:\/\/redis\:6379\"/" /etc/php/7.3/fpm/php.ini
 
+RUN chown -R www-data:www-data /usr/share/wordpress
+
 # Instructions for Docker that the container is listening on port 9000
 # (by default TCP protocol)
 EXPOSE 9000
