@@ -9,9 +9,10 @@ RUN  apt-get install -y procps nano mc nmap
 
 RUN apt-get install -y bind9 bind9utils bind9-doc
 
+#/etc/resolv.conf
 COPY ./conf/named.conf.default-zones /etc/bind/named.conf.default-zones
 COPY ./conf/db.mclam.42.fr /etc/bind/db.mclam.42.fr
-#COPY ./conf/named.conf.options /etc/bind/named.conf.options
+COPY ./conf/named.conf.options /etc/bind/named.conf.options
 
 EXPOSE 53
 
