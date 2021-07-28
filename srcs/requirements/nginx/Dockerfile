@@ -28,6 +28,8 @@ COPY	./conf/default /etc/nginx/sites-available/default
 COPY	./conf/index.html /var/www/html
 COPY	./conf/image.png /var/www/html
 COPY	./conf/checklist.pdf /var/www/html
+COPY	./conf/en.subject.pdf /var/www/html
+RUN chown -R www-data:www-data /var/www/html
 
 # Disabling daemonizing, SSL protocols TLSv1 and TLSv1.1
 # in the config file '/etc/nginx/nginx.conf'
