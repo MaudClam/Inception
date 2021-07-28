@@ -146,11 +146,11 @@ services:
     env_file: .env
     ports:
       - "21:21"
-      - "21000:21000"
+      - "31000:31009"
     volumes:
       - wp:/home/${FTP_USER}
       - ftp:/var/log
-#    networks:
-#      - inception
+    networks:
+      - inception
     restart: always
     container_name: ftp
