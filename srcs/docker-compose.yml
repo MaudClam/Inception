@@ -150,6 +150,6 @@ services:
     volumes:
       - wp:/home/${FTP_USER}
       - ftp:/var/log
-    network_mode: "host"
+    network_mode: "bridge"
     restart: always
     container_name: ftp
