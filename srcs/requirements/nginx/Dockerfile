@@ -33,6 +33,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 777 /var/www/html
 
+
 # Disabling daemonizing, SSL protocols TLSv1 and TLSv1.1
 # in the config file '/etc/nginx/nginx.conf'
 # and assign a domain name in the config file '/etc/nginx/sites-available/default'
