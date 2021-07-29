@@ -30,7 +30,7 @@
 		66A74E1326B21A550037B898 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		66A74E1426B21B270037B898 /* checklist.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = checklist.pdf; sourceTree = "<group>"; };
 		66A74E1526B21B270037B898 /* en.subject.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = en.subject.pdf; sourceTree = "<group>"; };
-		66A74E1626B2442F0037B898 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		66A74E1726B245C40037B898 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		66DF66C82678A938008AE2BC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
 		66DF66CA2678A9A4008AE2BC /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
 		66DF66D22678AAA9008AE2BC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.make; };
@@ -223,7 +223,7 @@
 		66DF66D92678AD60008AE2BC /* conf */ = {
 			isa = PBXGroup;
 			children = (
-				66A74E1626B2442F0037B898 /* image.jpg */,
+				66A74E1726B245C40037B898 /* image.jpg */,
 				66A74E1426B21B270037B898 /* checklist.pdf */,
 				66A74E1526B21B270037B898 /* en.subject.pdf */,
 				66A74E1326B21A550037B898 /* image.png */,
