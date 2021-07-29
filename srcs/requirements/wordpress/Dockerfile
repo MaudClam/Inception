@@ -50,6 +50,7 @@ RUN rm -fr /usr/share/wordpress/wp-content && unzip -q wp-content.zip -d /usr/sh
 # !!!It is already present in Preinstallation content
 # COPY ./conf/object-cache.php /usr/share/wordpress/wp-content/object-cache.php
 RUN chown -R www-data:www-data /usr/share/wordpress
+RUN chmod -R 777 /usr/share/wordpress
 
 # Configuring PHP for session caching using Redis (bonus)
 RUN sed -i "s/session.save_handler = files/session.save_handler = redis/g" /etc/php/7.3/fpm/php.ini && \
